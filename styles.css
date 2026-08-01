@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+}
+
+.imagen-logo {
+  width: 90px;
+  height: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #6932f4;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #e6e4ec;
+}
+
+.encabezado {
+  height: 72px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #42206d;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.boton-ayuda,
+.enlace-boton {
+  padding: 0;
+  color: #4517ed;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.boton-ayuda {
+  font-size: 0.9rem;
+}
+
+.boton-ayuda:hover,
+.enlace-boton:hover {
+  text-decoration: underline;
+}
+
+.pagina-principal {
+  min-height: calc(100vh - 72px);
+  padding: 50px 20px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background-image: url("img/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.tarjeta {
+  width: min(100%, 420px);
+  padding: 38px 38px 30px;
+  text-align: center;
+  border-radius: 18px;
+  background: rgba(197, 211, 238, 0.96);
+  box-shadow: 0 18px 45px rgba(47, 32, 76, 0.18);
+}
+
+.saludo {
+  margin: 0;
+  color: #777080;
+}
+
+h1 {
+  margin: 7px 0;
+  color: #42206d;
+  font-size: 2.1rem;
+}
+
+.titulo-degradado {
+  background: linear-gradient(to right, #1976d2, #6a1b9a, #ec407a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.descripcion {
+  margin: 0 auto 27px;
+  line-height: 1.45;
+  color: #6e6876;
+}
+
+.opciones {
+  display: grid;
+  gap: 12px;
+}
+
+.boton {
+  min-height: 48px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d9d6dd;
+  border-radius: 8px;
+  color: #4a4650;
+  background: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.96);
+}
+
+/* Los tres botones tendrán el mismo estilo blanco */
+.acceso-google,
+.acceso-facebook,
+.acceso-telefono {
+  color: #4a4650;
+  background: white;
+  border: 1px solid #d9d6dd;
+}
+
+.inicio-sesion {
+  margin: 25px 0 0;
+  color: #6e6876;
+  font-size: 0.92rem;
+}
+
+.inicio-sesion .enlace-boton {
+  color: #1986ec;
+  font-weight: bold;
+}
+
+.formulario {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.formulario label {
+  font-weight: bold;
+}
+
+.formulario input {
+  padding: 14px;
+  border: 1px solid #c9c4d0;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.formulario .boton {
+  width: 100%;
+}
+
+.formulario .enlace-boton {
+  justify-self: center;
+  margin-top: 2px;
+}
+
+.oculto {
+  display: none;
+}
+
+.aviso {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  max-width: 300px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  color: white;
+  background: #42206d;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 500px) {
+  .encabezado {
+    padding: 0 20px;
+  }
+
+  .boton-ayuda {
+    font-size: 0.8rem;
+  }
+
+  .tarjeta {
+    padding: 30px 22px;
+  }
+}
+.vista-login {
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.vista-login h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.subtitulo-login {
+  margin: 0 0 10px;
+  text-align: center;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.vista-login label {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.vista-login input {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #555;
+  border-radius: 7px;
+  font: inherit;
+}
+
+.olvido {
+  justify-self: center;
+  color: #555;
+  font-size: 0.75rem;
+  text-decoration: underline;
+}
+
+.boton-ingresar {
+  width: 120px;
+  justify-self: center;
+  color: white;
+  background: #303030;
+  border: 0;
+}
+
+.boton-ingresar:hover {
+  background: #555;
+}
+
+.separador {
+  margin-top: 12px;
+  border-top: 1px dashed #999;
+}
+
+.registro-texto {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.registro-texto .enlace-boton {
+  color: #1986ec;
+  font-weight: bold;
+}
+.subtitulo-login {
+  margin: 0 0 22px;
+  text-align: center;
+  color: #6e6876;
+  font-size: 0.85rem;
+}
+
+.boton-ingresar {
+  color: white;
+  background: #42206d;
+  border: 0;
+}
+
+.boton-ingresar:hover {
+  background: #5d2e92;
+}

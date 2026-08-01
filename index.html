@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubikap</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="#inicio" aria-label="Ir al inicio de Ubikap">
+      <img src="img/logo.png" alt="Logo Ubikap" class="imagen-logo">
+    </a>
+    <button id="botonAyuda" class="boton-ayuda" type="button">Ingresar como Invitado</button>
+  </header>
+
+  <main id="inicio" class="pagina-principal">
+    <section id="pantallaRegistro" class="tarjeta" aria-labelledby="titulo">
+      <div id="vistaRegistro">
+        <p class="saludo">¡Bienvenido!</p>
+        <h1 id="titulo" class="titulo-degradado">Ubikap</h1>
+
+        <p id="mensaje" class="descripcion">
+          Ingresa para encontrar lugares y compartir tu ubicación.
+        </p>
+
+        <div id="opcionesRegistro" class="opciones">
+          <button class="boton acceso-google" type="button" data-opcion="Google">
+            Continuar con Google
+          </button>
+
+          <button class="boton acceso-facebook" type="button" data-opcion="Facebook">
+            Continuar con Facebook
+          </button>
+
+          <button class="boton acceso-telefono" type="button" data-opcion="teléfono">
+            Continuar con teléfono
+          </button>
+        </div>
+
+        <form id="formularioTelefono" class="formulario oculto">
+          <label for="telefono">Número de teléfono</label>
+          <input id="telefono" type="tel" placeholder="Ej: 300 123 4567" required>
+
+          <button class="boton acceso-telefono" type="submit">
+            Enviar código
+          </button>
+
+          <button id="volver" class="enlace-boton" type="button">
+            Volver a las opciones
+          </button>
+        </form>
+
+        <p class="inicio-sesion">
+          ¿Ya tienes cuenta?
+          <button id="iniciarSesion" class="enlace-boton" type="button">
+            Inicia sesión
+          </button>
+        </p>
+      </div>
+
+      <form id="vistaLogin" class="vista-login oculto">
+        <h1 class="titulo-degradado">Ubikap</h1>
+        <p class="subtitulo-login">INICIA SESIÓN</p>
+
+        <label for="usuario">Usuario:</label>
+        <input id="usuario" type="text" placeholder="Escribe tu usuario" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input id="contrasena" type="password" placeholder="Escribe tu contraseña" required>
+
+        <button id="olvidoContrasena" class="enlace-boton olvido" type="button">
+          ¿Has olvidado la contraseña?
+        </button>
+
+        <button class="boton boton-ingresar" type="submit">
+          Iniciar
+        </button>
+
+        <div class="separador"></div>
+
+        <p class="registro-texto">
+          ¿Aún no tienes cuenta?
+          <button id="registrarse" class="enlace-boton" type="button">
+            Regístrate
+          </button>
+        </p>
+      </form>
+
+    </section>
+    <section id="pantallaLogin" class="tarjeta oculto">
+  <h1 class="titulo-degradado">Ubikap</h1>
+  <p class="subtitulo-login">INICIA SESIÓN</p>
+
+  <form id="formularioLogin" class="formulario">
+    <label for="usuario">Usuario</label>
+    <input
+      id="usuario"
+      type="text"
+      placeholder="Escribe tu usuario"
+      required
+    >
+
+    <label for="contrasena">Contraseña</label>
+    <input
+      id="contrasena"
+      type="password"
+      placeholder="Escribe tu contraseña"
+      required
+    >
+
+    <button class="boton boton-ingresar" type="submit">
+      Iniciar sesión
+    </button>
+
+    <button id="regresarRegistro" class="enlace-boton" type="button">
+      Regresar
+    </button>
+  </form>
+  </section>
+  <section id="pantallaLogin" class="tarjeta oculto">
+      <!-- Código del inicio de sesión -->
+    </section>
+  </main>
+
+  <div id="aviso" class="aviso oculto" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
