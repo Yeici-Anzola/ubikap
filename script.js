@@ -78,4 +78,4 @@ formularioLogin.addEventListener("submit", (evento) => {
 
 botonAyuda.addEventListener("click", () => {
   mostrarAviso("Puedes ingresar como invitado o crear una cuenta.");
-});
+}); 
