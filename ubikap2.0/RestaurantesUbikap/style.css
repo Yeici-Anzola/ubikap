@@ -1,0 +1,254 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    color:#222;
+}
+
+header{
+    height:70px;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:relative;
+    z-index:10;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:bold;
+    color:#222;
+}
+
+.logo span{
+    color:#ff5a36;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#555;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#ff5a36;
+}
+
+.hero{
+    min-height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+    position:relative;
+    background:
+        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+        url("imagenes/fondo-restaurante.jpg") center/cover;
+}
+
+.hero-contenido{
+    max-width:800px;
+    color:white;
+}
+
+.hero-contenido p{
+    color:#ffb199;
+    font-size:13px;
+    letter-spacing:4px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero span{
+    color:#ddd;
+}
+
+.buscador{
+    display:flex;
+    width:100%;
+    max-width:600px;
+    height:55px;
+    margin:30px auto 0;
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 5px 25px rgba(0,0,0,.25);
+}
+
+.buscador input{
+    flex:1;
+    border:0;
+    outline:0;
+    padding:0 25px;
+    font-size:15px;
+}
+
+.buscador button{
+    width:65px;
+    border:0;
+    background:#ff5a36;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+main{
+    width:90%;
+    max-width:1100px;
+    margin:50px auto;
+}
+
+.titulo{
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.restaurantes{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.restaurante{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.restaurante:hover{
+    transform:translateY(-7px);
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+/*IMAGEN COMIDAS*/
+
+.imagen{
+    height:190px;
+    background-position:center;
+    background-size:cover;
+}
+
+.hamburguesa{
+    background-image:url("IMG/Hamburguesa.jpg");
+    
+}
+
+.pizza{
+    background-image:url("IMG/Pizza.jpg");
+}
+
+.pollo{
+    background-image:url("IMG/Pollo\ Frito.jpg");
+}
+
+.sushi{
+    background-image:url("IMG/sushi.jpg");
+}
+
+.tacos{
+    background-image:url("IMG/Tacos.jpg");
+}
+
+.ensalada{
+    background-image:url("IMG/Ensalada.jpg");
+}
+
+.pasta{
+    background-image:url("IMG/LASAÑA.jpg");
+}
+
+.parrilla{
+    background-image:url("IMG/CARNE\ PARRILLA.jpg");
+}
+
+.contenido{
+    padding:20px;
+}
+
+.tipo{
+    color:#ff5a36;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.contenido h3{
+    font-size:22px;
+    margin:8px 0;
+}
+
+.contenido p{
+    color:#777;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.abajo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
+}
+
+.abajo span{
+    color:#777;
+    font-size:13px;
+}
+
+.abajo button{
+    border:0;
+    background:#ff5a36;
+    color:white;
+    padding:9px 20px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.abajo button:hover{
+    background:#e84928;
+}
+
+footer{
+    text-align:center;
+    background:#222;
+    color:#aaa;
+    padding:25px;
+    font-size:13px;
+}
+
+@media(max-width:750px){
+
+    header{
+        padding:0 5%;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .restaurantes{
+        grid-template-columns:1fr;
+    }
+}

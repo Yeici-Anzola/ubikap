@@ -1,0 +1,352 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #05070d;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Fondo tecnológico */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #ac1d75;
+    filter: blur(180px);
+    opacity: 0.08;
+    top: 20%;
+    left: 35%;
+    z-index: -1;
+}
+
+/* Barra superior */
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    border-bottom: 1px solid rgba(0, 238, 255, 0.2);
+    background: rgba(5, 7, 13, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #af4687;
+    text-shadow: 0 0 15px #fa059c;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #af4687;
+    text-shadow: 0 0 10px #af4687;
+}
+
+/*Barra de Busquedaa*/
+
+.buscador {
+    display: flex;
+    width: 350px;
+    height: 45px;
+    margin: 30px auto;
+    border: 1px solid #af4687;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #0c111b;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
+}
+
+.buscador input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+}
+
+.buscador input::placeholder {
+    color: #777;
+}
+
+.buscador button {
+    width: 55px;
+    border: none;
+    background: transparent;
+    color: #af4687;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buscador button:hover {
+    background: #af4687;
+    color: #05070d;
+}
+
+/*Modo oscuro y modo claro*/
+
+button {
+    display: flexbox;
+    width: 52px;
+    height: 52px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    cursor: pointer;
+    /* el transition: cubic-bezier sirve para crear curvas de tiempo personalizadas en transiciones y animaciones (x1, y1, x2, y2) valores entre 0 y 1 */
+    transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1);
+    /* el overflow determina si se oculta, se muestra, o se añaden barras de desplazaient, y el hidden sirve para recordar y ocultar cualquier cosa dle contenido */
+    overflow: hidden;
+    /* el white-space sirve para controlar los espacios en blanco y saltos del linea del html, y el nowrap le dice al navegador que no importa que tan largo es el texto que todo este en una linea */
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+    /* el font-weight: bold aumenta el grosor de la letra haciendolo parecer negrilla */
+    font-weight: bold;
+}
+
+/* button i modifica los iconos para que quen en medio,quedan con las mimas dimensiones del button porque e lo que necesitamos que se vea */
+button i {
+    min-width: 52px;
+    font-size: 20px;
+}
+
+button span {
+    padding-right: 15px;
+}
+
+button:hover {
+    width: 170px;
+    max-width: 170px;
+}
+
+button.claro:hover {
+    background-color: rgba(248, 219, 192, 0.753);
+}
+
+button.lectura:hover {
+    background-color: rgba(232, 235, 185, 0.863);
+}
+
+button.oscuro:hover {
+    background-color: rgba(117, 135, 196, 0.53);
+}
+
+/*se pone el body para que se llame en el js.*/
+body.claro {
+    background-color: #ffffff;
+    color: black;
+}
+
+body.oscuro {
+    .informacion {
+        
+        border: 3px solid #4b0707;
+    }
+
+
+    button {
+        border: 1px solid #ffffff
+    }
+}
+
+
+
+/* Inicio */
+
+.inicio {
+    min-height: calc(100vh - 130px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 8%;
+}
+
+.contenido {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+.subtitulo {
+    color: #af4687;
+    letter-spacing: 6px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(40px, 7vw, 75px);
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #af4687;
+    text-shadow:
+        0 0 10px #fc06bedc,
+        0 0 30px rgba(87, 3, 52, 0.5);
+}
+
+.descripcion {
+    color: #999;
+    font-size: 18px;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+/* Tarjetas */
+
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 55px;
+}
+
+.tarjeta {
+    position: relative;
+    padding: 35px 25px;
+    min-height: 230px;
+    text-decoration: none;
+    color: white;
+    background: rgba(12, 17, 27, 0.726);
+    border: 1px solid rgba(0, 234, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.tarjeta::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #af4687;
+    left: -100%;
+    top: 0;
+    transition: 0.4s;
+    box-shadow: 0 0 15px #ff009d;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    border-color: #ff00c8;
+    box-shadow:
+        0 0 20px rgba(0, 234, 255, 0.15),
+        inset 0 0 20px rgba(0, 234, 255, 0.04);
+}
+
+.tarjeta:hover::before {
+    left: 0;
+}
+
+.icono {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ff0040;
+    border-radius: 50%;
+    color: #ff0022;
+    font-size: 25px;
+    box-shadow: 0 0 15px rgba(252, 6, 6, 0.89);
+}
+
+.tarjeta h2 {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.tarjeta p {
+    color: #f3efef;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.tarjeta span {
+    color: #f162629c;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* Footer */
+
+footer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 12px;
+    border-top: 1px solid rgba(0, 234, 255, 0.1);
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    header {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .opciones {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio {
+        padding: 50px 20px;
+    }
+}
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodMap - Restaurantes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Ubikap<span>Restaurantes</span></div>
+
+    <nav>
+        <a href="../Inicio.html">Inicio</a>
+        <a href="restaurantes.html">Restaurantes</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-contenido">
+        <p>DESCUBRE NUEVOS SABORES</p>
+        <h1>Encuentra tu restaurante favorito</h1>
+        <span>Explora diferentes opciones cerca de ti</span>
+
+        <div class="buscador">
+            <input type="text" id="buscar" placeholder="¿Qué quieres comer?">
+            <button onclick="buscarRestaurante()">🔍</button>
+        </div>
+    </div>
+</section>
+
+<main>
+
+    <h2 class="titulo">Restaurantes cercanos</h2>
+
+    <div class="restaurantes" id="listaRestaurantes">
+
+        <div class="restaurante" data-nombre="hamburguesa burger house">    
+            <div class="imagen hamburguesa"></div>
+            <div class="contenido">
+                <span class="tipo">🍔 Hamburguesas</span>
+                <h3>Burger House</h3>
+                <p>Hamburguesas, papas y comida rápida.</p>
+                <div class="abajo">
+                    <span>📍 0.8 km</span>
+                    <button onclick="verRestaurante('Burger House')">Ver</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurante" data-nombre="pizza pizza central italiana">
+            <div class="imagen pizza"></div>
+            <div class="contenido">
+                <span class="tipo">🍕 Pizza</span>
+                <h3>Pizza Central</h3>
+                <p>Pizza artesanal y comida italiana.</p>
+                <div class="abajo">
+                    <span>📍 1.2 km</span>
+                    <button onclick="verRestaurante('Pizza Central')">Ver</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurante" data-nombre="pollo pollo express">
+            <div class="imagen pollo"></div>
+            <div class="contenido">
+                <span class="tipo">🍗 Pollo</span>
+                <h3>Pollo Express</h3>
+                <p>Pollo asado, broaster y acompañamientos.</p>
+                <div class="abajo">
+                    <span>📍 1.7 km</span>
+                    <button onclick="verRestaurante('Pollo Express')">Ver</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurante" data-nombre="sushi japonesa sakura">
+            <div class="imagen sushi"></div>
+            <div class="contenido">
+                <span class="tipo">🍣 Japonesa</span>
+                <h3>Sakura Sushi</h3>
+                <p>Sushi, ramen y comida japonesa.</p>
+                <div class="abajo">
+                    <span>📍 2.1 km</span>
+                    <button onclick="verRestaurante('Sakura Sushi')">Ver</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurante" data-nombre="tacos mexicana taco loco">
+            <div class="imagen tacos"></div>
+            <div class="contenido">
+                <span class="tipo">🌮 Mexicana</span>
+                <h3>Taco Loco</h3>
+                <p>Tacos, burritos y comida mexicana.</p>
+                <div class="abajo">
+                    <span>📍 2.8 km</span>
+                    <button onclick="verRestaurante('Taco Loco')">Ver</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurante" data-nombre="ensalada saludable green food">
+            <div class="imagen ensalada"></div>
+            <div class="contenido">
+                <span class="tipo">🥗 Saludable</span>
+                <h3>Green Food</h3>
+                <p>Ensaladas, bowls y comida saludable.</p>
+                <div class="abajo">
+                    <span>📍 3.4 km</span>
+                    <button onclick="verRestaurante('Green Food')">Ver</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurante" data-nombre="pasta italiana toscana">
+            <div class="imagen pasta"></div>
+            <div class="contenido">
+                <span class="tipo">🍝 Italiana</span>
+                <h3>La Toscana</h3>
+                <p>Pastas, lasañas y platos italianos.</p>
+                <div class="abajo">
+                    <span>📍 3.9 km</span>
+                    <button onclick="verRestaurante('La Toscana')">Ver</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurante" data-nombre="carne parrilla carnes">
+            <div class="imagen parrilla"></div>
+            <div class="contenido">
+                <span class="tipo">🥩 Parrilla</span>
+                <h3>Parrilla 24</h3>
+                <p>Carnes, parrilla y platos especiales.</p>
+                <div class="abajo">
+                    <span>📍 4.3 km</span>
+                    <button onclick="verRestaurante('Parrilla 24')">Ver</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 FoodMap - Encuentra tu comida favorita en UBIKAHUILA</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
