@@ -1,111 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ubikap</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBIKAP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header class="encabezado">
-    <a class="logo" href="#inicio" aria-label="Ir al inicio de Ubikap">
-      <img src="img/logo.png" alt="Logo Ubikap" class="imagen-logo">
-    </a>
-    <a href="ubikap2.0/Inicio.html" class="">
-    <button id="botonAyuda" class="boton-ayuda" type="button">Ingresar como Invitado</button>
-    </a>
-  </header>
 
-  <main id="inicio" class="pagina-principal">
-    <section id="pantallaRegistro" class="tarjeta" aria-labelledby="titulo">
-      <div id="vistaRegistro">
-        <p class="saludo">¡Bienvenido!</p>
-        <h1 id="titulo" class="titulo-degradado">Ubikap</h1>
+<body class="bg-gray-50 text-gray-800">
 
-        <p id="mensaje" class="descripcion">
-          Ingresa para encontrar lugares y compartir tu ubicación.
-        </p>
+    <!-- Encabezado -->
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap justify-between items-center gap-4">
 
-        <div id="opcionesRegistro" class="opciones">
-          <button class="boton acceso-google" type="button" data-opcion="Google">
-            <a href="ubikap2.0/Inicio.html" class="">
-            Continuar con Google
-          </button>
-          </a>
+            <!-- Logo -->
+            <h1 class="text-2xl font-bold text-blue-700">
+                UBIKAP<span class="text-orange-500"></span>
+            </h1>
 
-          <button class="boton acceso-facebook" type="button" data-opcion="Facebook">
-          <a href="ubikap2.0/Inicio.html" class="">
-            Continuar con Facebook
-          </button>
-          </a>
+            <!-- Barra de búsqueda -->
+            <div class="flex-1 min-w-[180px] max-w-md">
+                <form id="searchForm" class="flex">
+                    <input type="search" id="searchInput" placeholder="Buscar comercios..."
+                        aria-label="Buscar comercios"
+                        class="w-full min-w-0 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-          <button class="boton acceso-telefono" type="button" data-opcion="teléfono">
-            Continuar con teléfono
-          </button>
+                    <button type="submit" aria-label="Buscar"
+                        class="bg-blue-700 text-white px-4 py-2 rounded-r-lg hover:bg-blue-800 transition">
+                        🔍
+                    </button>
+                </form>
+            </div>
+
+            <!-- Navegación para computador -->
+            <div class="hidden sm:flex gap-6">
+                <a href="#inicio" class="hover:text-blue-600">Inicio</a>
+                <a href="#comercios" class="hover:text-blue-600">Comercios</a>
+                <a href="#contacto" class="hover:text-blue-600">Contacto</a>
+            </div>
+
+            <!-- Botón del menú móvil -->
+            <button id="menuBtn" class="sm:hidden text-2xl" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+        </nav>
+
+        <!-- Menú para celulares -->
+        <div id="mobileMenu" class="hidden sm:hidden px-6 pb-4">
+            <a href="#inicio" class="block py-2">Inicio</a>
+            <a href="#comercios" class="block py-2">Comercios</a>
+            <a href="#contacto" class="block py-2">Contacto</a>
         </div>
+    </header>
 
-        <form id="formularioTelefono" class="formulario oculto">
-          <label for="telefono">Número de teléfono</label>
-          <input id="telefono" type="tel" placeholder="Ej: 300 123 4567" required>
+    <!-- Portada -->
+    <section id="inicio" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
 
-          <button class="boton acceso-telefono" type="submit">
-          <a href="ubikap2.0/Inicio.html" class="">
-            Enviar código
-          </button>
-          </a>
+            <div>
+                <p class="text-orange-500 font-semibold mb-3">
+                    TODO EN UN SOLO SITIO
+                </p>
 
-          <button id="volver" class="enlace-boton" type="button">
-            Volver a las opciones
-          </button>
-        </form>
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+                    Descubre tu nuevo
+                    <span class="text-blue-700">lugar favorito.</span>
+                </h2>
 
-        <p class="inicio-sesion">
-          ¿Ya tienes cuenta?
-          <button id="iniciarSesion" class="enlace-boton" type="button">
-          <a href="ubikap2.0/Inicio.html" class=""></a>
-            Inicia sesión
-          </button>
-          <a href="ubikap2.0/Inicio.html" class=""></a>
+                <p class="text-gray-600 mt-5 leading-7">
+                    Encuentra tiendas, restaurantes y servicios.
+                    Vive una experiencia diferente en UBIKAP.
+                </p>
+
+                <a href="#comercios"
+                    class="inline-block mt-7 bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">
+                    Explorar comercios →
+                </a>
+            </div>
+
+            <div>
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80"
+                    alt="Interior de un espacio comercial" class="w-full h-80 object-cover rounded-2xl shadow-lg">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Comercios -->
+    <section id="comercios" class="bg-white py-16">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold">Diferentes comercios</h2>
+                <p class="text-gray-500 mt-3">
+                    Encuentra todo lo que necesitas.
+                </p>
+            </div>
+
+            <!-- Mensaje de búsqueda -->
+            <p id="searchMessage" class="text-center text-gray-500 mb-6" aria-live="polite"></p>
+
+            <div id="commerceList" class="grid sm:grid-cols-2 md:grid-cols-3 gap-7">
+
+                <!-- Comercio 1 -->
+                <article
+                    class="commerceCard bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80"
+                        alt="Tienda de ropa" class="w-full h-48 object-cover" loading="lazy">
+
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold">Moda y estilo</h3>
+                        <p class="text-gray-600 mt-2">
+                            Encuentra ropa, accesorios y nuevas tendencias.
+                        </p>
+                        <button class="infoBtn mt-4 text-blue-700 font-semibold hover:underline"
+                            data-info="Moda y estilo">
+                            Ver información →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Comercio 2 -->
+                <article
+                    class="commerceCard bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80"
+                        alt="Cafetería" class="w-full h-48 object-cover" loading="lazy">
+
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold">Restaurantes y cafés</h3>
+                        <p class="text-gray-600 mt-2">
+                            Disfruta de buenos sabores y momentos especiales.
+                        </p>
+                        <button class="infoBtn mt-4 text-blue-700 font-semibold hover:underline"
+                            data-info="Restaurantes y cafés">
+                            Ver información →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Comercio 3 -->
+                <article
+                    class="commerceCard bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80"
+                        alt="Espacio empresarial" class="w-full h-48 object-cover" loading="lazy">
+
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold">Servicios y negocios</h3>
+                        <p class="text-gray-600 mt-2">
+                            Descubre servicios y oportunidades para tu negocio.
+                        </p>
+                        <button class="infoBtn mt-4 text-blue-700 font-semibold hover:underline"
+                            data-info="Servicios y negocios">
+                            Ver información →
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="max-w-6xl mx-auto px-6 py-16 text-center">
+        <h2 class="text-3xl font-bold">¡Te esperamos!</h2>
+
+        <p class="mt-4 text-gray-600">
+            Ven y descubre todo lo que nuestro distrito tiene para ofrecer.
         </p>
-      </div>
 
+        <a href="mailto:contacto@ejemplo.com"
+            class="inline-block mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition">
+            Contáctanos
+        </a>
     </section>
-    <section id="pantallaLogin" class="tarjeta oculto">
-  <h1 class="titulo-degradado">Ubikap</h1>
-  <p class="subtitulo-login">INICIA SESIÓN</p>
 
-  <form id="formularioLogin" class="formulario">
-    <label for="usuario">Usuario</label>
-    <input
-      id="usuario"
-      type="text"
-      placeholder="Escribe tu usuario"
-      required
-    >
+    <!-- Pie de página -->
+    <footer class="text-black text-center py-6">
+        <p>© <span id="year"></span> UBIKAP. Esperamos tu registro pronto.</p>
+    </footer>
 
-    <label for="contrasena">Contraseña</label>
-    <input
-      id="contrasena"pantallaLogin
-      type="password"
-      placeholder="Escribe tu contraseña"
-      required
-    >
+    <!-- JavaScript externo -->
+    <script src="script.js"></script>
 
-    <button class="boton boton-ingresar" type="submit">
-      Iniciar sesión
-    </button>
-
-    <button id="regresarRegistro" class="enlace-boton" type="button">
-      Regresar
-    </button>
-  </form>
-  </section>
-  <section id="pantallaLogin" class="tarjeta oculto">
-      <!-- Código del inicio de sesión -->
-    </section>
-  </main>
-
-  <div id="aviso" class="aviso oculto" role="status"></div>
-  <script src="script.js"></script>
 </body>
+
 </html>
