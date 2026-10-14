@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBIKAP</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @keyframes palpitar {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @keyframes flotar {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+
+        @keyframes girar {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .latido-imagen {
+            animation: palpitar 1.2s ease-in-out infinite;
+        }
+
+        .flotar {
+            animation: flotar 6s ease-in-out infinite;
+        }
+
+        .girar {
+            animation: girar 12s linear infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="m-0 min-h-screen overflow-hidden">
+
+    <main id="loader" role="status" aria-label="Cargando" class="relative flex min-h-screen items-center justify-center
+        overflow-hidden bg-gradient-to-br
+        from-slate-950 via-indigo-950 to-purple-950">
+
+        <!-- Luces del fondo -->
+        <div class="pointer-events-none absolute inset-0 overflow-hidden">
+
+            <div class="flotar absolute -left-24 -top-20 h-80 w-80
+                rounded-full bg-cyan-400/20 blur-3xl"></div>
+
+            <div class="flotar absolute -bottom-24 -right-20 h-96 w-96
+                rounded-full bg-fuchsia-500/25 blur-3xl" style="animation-delay: -3s;"></div>
+
+            <div class="absolute left-1/2 top-1/2 h-72 w-72
+                -translate-x-1/2 -translate-y-1/2
+                rounded-full bg-blue-500/20 blur-3xl"></div>
+
+            <!-- Puntos luminosos -->
+            <div class="absolute left-[15%] top-[22%] h-2 w-2
+                rounded-full bg-cyan-300 shadow-lg shadow-cyan-300/80"></div>
+
+            <div class="absolute right-[20%] top-[30%] h-3 w-3
+                rounded-full bg-purple-300 shadow-lg shadow-purple-300/80"></div>
+
+            <div class="absolute bottom-[22%] left-[28%] h-2 w-2
+                rounded-full bg-blue-300 shadow-lg shadow-blue-300/80"></div>
+
+            <div class="absolute bottom-[30%] right-[15%] h-2 w-2
+                rounded-full bg-pink-300 shadow-lg shadow-pink-300/80"></div>
+
+            <!-- Anillo giratorio -->
+            <div class="girar absolute left-1/2 top-1/2
+                h-[340px] w-[340px]
+                -translate-x-1/2 -translate-y-1/2
+                rounded-full border border-white/10
+                border-t-cyan-300/50">
+            </div>
+
+        </div>
+
+        <!-- Únicamente el logo -->
+        <div class="relative z-10 flex h-36 w-36 items-center justify-center
+                rounded-[2rem] border border-white/20
+                bg-white/10 shadow-2xl shadow-cyan-500/20
+                backdrop-blur-xl">
+
+            <div class="absolute inset-2 rounded-[1.5rem]
+                border border-white/10"></div>
+
+            <img class="latido-imagen relative z-10 h-20 w-20 object-contain" alt="Logo de UBIKAP"
+                src="/img/logo.png">
+
+        </div>
+
+    </main>
+
+<script src="pantallacarga.js"></script>
+</body>
+
+</html>
