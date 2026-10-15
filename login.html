@@ -1,111 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ubikap</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ubikap | Iniciar sesión</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    
 </head>
-<body>
-  <header class="encabezado">
-    <a class="logo" href="#inicio" aria-label="Ir al inicio de Ubikap">
-      <img src="img/logo.png" alt="Logo Ubikap" class="imagen-logo">
+<body class="relative flex min-h-screen flex-col bg-slate-900 text-slate-900">
+  
+
+  <!-- Fondo -->
+  <div aria-hidden="true"
+       class="absolute inset-0 pointer-events-none bg-[url('img/fondo.jpg')] bg-cover bg-center bg-no-repeat">
+  </div>
+
+  <!-- Encabezado -->
+  <header class="relative z-10 flex items-start justify-between px-6 py-5 sm:px-14">
+    <a href="/" aria-label="Ubikap, inicio">
+      <img src="img/logo.png" class="h-16" alt="Ubikap" />
     </a>
-    <a href="pantallacarga.html" class=""> 
-    <button id="botonAyuda" class="boton-ayuda" type="button">Ingresar como Invitado</button>
+
+    <a href="pantallacarga.html"
+       class="rounded-lg border border-slate-200/80 bg-indigo-950 px-4 py-2 text-sm text-white transition hover:bg-indigo-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+      Ingresar como Invitado
     </a>
   </header>
 
-  <main id="inicio" class="pagina-principal">
-    <section id="pantallaRegistro" class="tarjeta" aria-labelledby="titulo">
-      <div id="vistaRegistro">
-        <p class="saludo">¡Bienvenido!</p>
-        <h1 id="titulo" class="titulo-degradado">Ubikap</h1>
+  <!-- Tarjeta con Glassmorphism -->
+  <main class="relative z-10 flex min-h-[calc(100vh-110px)] items-center justify-center px-4 pb-10">
+    <section class="w-full max-w-[473px] rounded-3xl bg-white/10 px-10 py-12 text-center shadow-2xl shadow-black/40 backdrop-blur-md border border-white/20"
+             aria-labelledby="titulo">
+      <p class="text-white font-semibold drop-shadow-md">¡Bienvenido!</p>
+      <h1 id="titulo" class="mt-1 bg-gradient-to-r from-violet-900 to-fuchsia-500 bg-clip-text text-6xl font-bold text-transparent">
+        Ubikap
+      </h1>
+      <p class="mx-auto mt-3 max-w-xs text-base leading-relaxed text-white  drop-shadow-md">
+      Ingresa para encontrar lugares y compartir tu ubicación.
+    </p>
 
-        <p id="mensaje" class="descripcion">
-          Ingresa para encontrar lugares y compartir tu ubicación.
-        </p>
+      <div class="mt-8 space-y-5">
+        <button type="button" id="btn-google"
+                class="w-full flex items-center justify-center gap-3 py-3 px-4 bg-slate-900/40 hover:bg-slate-900/60 backdrop-blur-md border border-white/10 text-white rounded-xl transition-all">
+          <svg viewBox="0 0 48 48" class="h-5 w-5" aria-hidden="true">
+            <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.7c4.3-4 6.9-9.9 6.9-17.1z"/>
+            <path fill="#FBBC05" d="M10.5 28.7a14.5 14.5 0 010-9.4l-7.9-6.1a24 24 0 000 21.6l7.9-6.1z"/>
+            <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.7c-2.1 1.4-4.8 2.3-8.5 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/>
+          </svg>
+          Continuar con Google
+        </button>
 
-        <div id="opcionesRegistro" class="opciones">
-          <button class="boton acceso-google" type="button" data-opcion="Google">
-            <a href="pantallacarga.html" class="">
-            Continuar con Google
-          </button>
-          </a>
+        <button type="button" id="btn-facebook"
+                class="w-full flex items-center justify-center gap-3 py-3 px-4 bg-slate-900/40 hover:bg-slate-900/60 backdrop-blur-md border border-white/10 text-white rounded-xl transition-all">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
+            <path fill="#1877F2" d="M24 12a12 12 0 10-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0024 12z"/>
+          </svg>
+          Continuar con Facebook
+        </button>
 
-          <button class="boton acceso-facebook" type="button" data-opcion="Facebook">
-          <a href="pantallacarga.html" class="">
-            Continuar con Facebook
-          </button>
-          </a>
-
-          <button class="boton acceso-telefono" type="button" data-opcion="teléfono">
-            Continuar con teléfono
-          </button>
-        </div>
-
-        <form id="formularioTelefono" class="formulario oculto">
-          <label for="telefono">Número de teléfono</label>
-          <input id="telefono" type="tel" placeholder="Ej: 300 123 4567" required>
-
-          <button class="boton acceso-telefono" type="submit">
-          <a href="pantallacarga.html" class="">
-            Enviar código
-          </button>
-          </a>
-
-          <button id="volver" class="enlace-boton" type="button">
-            Volver a las opciones
-          </button>
-        </form>
-
-        <p class="inicio-sesion">
-          ¿Ya tienes cuenta?
-          <button id="iniciarSesion" class="enlace-boton" type="button">
-          <a href="pantallacarga.html" class=""></a>
-            Inicia sesión
-          </button>
-          <a href="pantallacarga.html" class=""></a>
-        </p>
+        <a href="registro.html" id="btn-registro"
+           class="w-full flex items-center justify-center gap-3 py-3 px-4 bg-slate-900/40 hover:bg-slate-900/60 backdrop-blur-md border border-white/10 text-white rounded-xl transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-arrow-left preview-icon"><path d="m19 16-3 3"/><path d="M2 21a8 8 0 0 1 12.664-6.5"/><path d="M22 19h-6l3 3"/><circle cx="10" cy="8" r="5"/></svg>
+          Registrarse Manualmente
+        </a>
       </div>
 
-    </section>
-    <section id="pantallaLogin" class="tarjeta oculto">
-  <h1 class="titulo-degradado">Ubikap</h1>
-  <p class="subtitulo-login">INICIA SESIÓN</p>
-
-  <form id="formularioLogin" class="formulario">
-    <label for="usuario">Usuario</label>
-    <input
-      id="usuario"
-      type="text"
-      placeholder="Escribe tu usuario"
-      required
-    >
-
-    <label for="contrasena">Contraseña</label>
-    <input
-      id="contrasena"pantallaLogin
-      type="password"
-      placeholder="Escribe tu contraseña"
-      required
-    >
-
-    <button class="boton boton-ingresar" type="submit">
-      Iniciar sesión
-    </button>
-
-    <button id="regresarRegistro" class="enlace-boton" type="button">
-      Regresar
-    </button>
-  </form>
-  </section>
-  <section id="pantallaLogin" class="tarjeta oculto">
-      <!-- Código del inicio de sesión -->
+      <p class="mt-8 text-sm text-slate-200 drop-shadow-sm">
+        ¿Ya tienes cuenta?
+        <a href="iniciar-sesion.html"
+           class="ml-1 rounded border border-white/30 bg-white/10 px-2 py-0.5 font-semibold text-cyan-300 transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500">
+          Inicia sesión
+        </a>
+      </p>
     </section>
   </main>
 
-  <div id="aviso" class="aviso oculto" role="status"></div>
-  <script src="script.js"></script>
+  <script>
+    const rutas = {
+      "btn-google": "/auth/google",
+      "btn-facebook": "/auth/facebook",
+      "btn-telefono": "/auth/telefono"
+    };
+    Object.entries(rutas).forEach(([id, ruta]) => {
+      document.getElementById(id).addEventListener("click", () => { window.location.href = ruta; });
+    });
+  </script>
 </body>
 </html>
+
+  

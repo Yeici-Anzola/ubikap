@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ubikap | Crear cuenta</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+</head>
+<body class="relative flex min-h-screen flex-col bg-slate-900 text-slate-900">
+
+  <!-- Fondo -->
+  <div aria-hidden="true"
+       class="fixed inset-0 pointer-events-none bg-[url('img/fondo.jpg')] bg-cover bg-center bg-no-repeat">
+  </div>
+
+  <!-- Encabezado -->
+  <header class="relative z-10 flex items-start justify-between px-6 py-5 sm:px-14">
+    <a href="/" aria-label="Ubikap, inicio">
+      <img src="img/logo.png" class="h-16" alt="Ubikap" />
+    </a>
+
+    <a href="pantallacarga.html"
+       class="rounded-lg border border-slate-200/80 bg-indigo-950 px-4 py-2 text-sm text-white transition hover:bg-indigo-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+      Ingresar como Invitado
+    </a>
+  </header>
+
+  <!-- Tarjeta con Glassmorphism -->
+  <main class="relative z-10 flex flex-1 items-center justify-center px-4 pb-10">
+    <section class="w-full max-w-[473px] rounded-3xl border border-white/20 bg-white/10 px-8 py-10 shadow-2xl shadow-black/40 backdrop-blur-md sm:px-10"
+             aria-labelledby="titulo">
+      <div class="text-center">
+        <p class="font-semibold text-white drop-shadow-md">¡Únete a</p>
+        <h1 id="titulo" class="mt-1 bg-gradient-to-r from-violet-900 to-fuchsia-500 bg-clip-text text-6xl font-bold text-transparent">
+          Ubikap!
+        </h1>
+        <p class="mx-auto mt-3 max-w-xs text-base leading-relaxed text-white drop-shadow-md">
+          Crea tu cuenta para encontrar lugares y compartir tu ubicación.
+        </p>
+      </div>
+
+      <form id="form-registro" class="mt-8 space-y-4" novalidate>
+
+        <!-- Tipo de cuenta -->
+        <fieldset>
+          <legend class="mb-2 text-sm font-semibold text-white drop-shadow-sm">Quiero registrarme como</legend>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="cursor-pointer">
+              <input type="radio" name="rol" value="cliente" class="peer sr-only" checked />
+              <span class="block rounded-xl border border-white/10 bg-slate-900/40 py-2.5 text-center text-sm text-white transition peer-checked:border-cyan-300 peer-checked:bg-slate-900/70 peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">
+                Cliente
+              </span>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="rol" value="empresa" class="peer sr-only" />
+              <span class="block rounded-xl border border-white/10 bg-slate-900/40 py-2.5 text-center text-sm text-white transition peer-checked:border-cyan-300 peer-checked:bg-slate-900/70 peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">
+                Empresa
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="nombre" class="mb-1 block text-sm font-semibold text-white drop-shadow-sm">Nombre completo</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required
+                 placeholder="Tu nombre"
+                 class="w-full rounded-xl border border-white/10 bg-slate-900/40 px-4 py-3 text-white placeholder-white/50 backdrop-blur-md transition focus:border-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/50" />
+        </div>
+
+        <div>
+          <label for="correo" class="mb-1 block text-sm font-semibold text-white drop-shadow-sm">Correo electrónico</label>
+          <input id="correo" name="correo" type="email" autocomplete="email" required
+                 placeholder="tucorreo@ejemplo.com"
+                 class="w-full rounded-xl border border-white/10 bg-slate-900/40 px-4 py-3 text-white placeholder-white/50 backdrop-blur-md transition focus:border-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/50" />
+        </div>
+
+        <div>
+          <label for="telefono" class="mb-1 block text-sm font-semibold text-white drop-shadow-sm">Teléfono</label>
+          <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel"
+                 placeholder="300 123 4567"
+                 class="w-full rounded-xl border border-white/10 bg-slate-900/40 px-4 py-3 text-white placeholder-white/50 backdrop-blur-md transition focus:border-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/50" />
+        </div>
+
+        <div>
+          <label for="password" class="mb-1 block text-sm font-semibold text-white drop-shadow-sm">Contraseña</label>
+          <div class="relative">
+            <input id="password" name="password" type="password" autocomplete="new-password" required minlength="8"
+                   placeholder="Mínimo 8 caracteres"
+                   class="w-full rounded-xl border border-white/10 bg-slate-900/40 py-3 pl-4 pr-20 text-white placeholder-white/50 backdrop-blur-md transition focus:border-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/50" />
+            <button type="button" data-toggle="password"
+                    class="absolute inset-y-0 right-3 my-auto h-8 rounded px-2 text-xs text-cyan-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+              Mostrar
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label for="confirmar" class="mb-1 block text-sm font-semibold text-white drop-shadow-sm">Confirmar contraseña</label>
+          <div class="relative">
+            <input id="confirmar" name="confirmar" type="password" autocomplete="new-password" required
+                   placeholder="Repite tu contraseña"
+                   class="w-full rounded-xl border border-white/10 bg-slate-900/40 py-3 pl-4 pr-20 text-white placeholder-white/50 backdrop-blur-md transition focus:border-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/50" />
+            <button type="button" data-toggle="confirmar"
+                    class="absolute inset-y-0 right-3 my-auto h-8 rounded px-2 text-xs text-cyan-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+              Mostrar
+            </button>
+          </div>
+        </div>
+
+        <label class="flex items-start gap-3 text-sm text-slate-200">
+          <input id="terminos" name="terminos" type="checkbox" required
+                 class="mt-0.5 h-4 w-4 shrink-0 rounded border-white/30 bg-slate-900/40 accent-fuchsia-500" />
+          <span>Acepto los <a href="terminos.html" class="font-semibold text-cyan-300 underline-offset-2 hover:underline">términos y condiciones</a>.</span>
+        </label>
+
+        <!-- Mensaje de error -->
+        <p id="error" role="alert" class="hidden rounded-lg border border-red-300/40 bg-red-500/20 px-3 py-2 text-sm text-red-100"></p>
+
+        <div class="flex items-center justify-between text-sm text-slate-200">
+          <a href="pantallacarga.html"
+            type="submit"
+                  class="w-full flex justify-center rounded-xl bg-gradient-to-r from-violet-700 to-fuchsia-600 px-4 py-3 font-semibold text-white shadow-lg shadow-fuchsia-900/30 transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+            Crear cuenta
+          </a>
+        </div> 
+      </form>
+
+      <!-- Registro rápido -->
+      <div class="my-6 flex items-center gap-3 text-xs text-slate-200">
+        <span class="h-px flex-1 bg-white/20"></span>
+        o regístrate con
+        <span class="h-px flex-1 bg-white/20"></span>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <button type="button" id="btn-google"
+                class="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-slate-900/40 px-4 py-3 text-sm text-white backdrop-blur-md transition-all hover:bg-slate-900/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+          <svg viewBox="0 0 48 48" class="h-5 w-5" aria-hidden="true">
+            <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.7c4.3-4 6.9-9.9 6.9-17.1z"/>
+            <path fill="#FBBC05" d="M10.5 28.7a14.5 14.5 0 010-9.4l-7.9-6.1a24 24 0 000 21.6l7.9-6.1z"/>
+            <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.7c-2.1 1.4-4.8 2.3-8.5 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/>
+          </svg>
+          Google
+        </button>
+        <button type="button" id="btn-facebook"
+                class="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-slate-900/40 px-4 py-3 text-sm text-white backdrop-blur-md transition-all hover:bg-slate-900/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
+            <path fill="#1877F2" d="M24 12a12 12 0 10-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0024 12z"/>
+          </svg>
+          Facebook
+        </button>
+      </div>
+
+      <p class="mt-8 text-center text-sm text-slate-200 drop-shadow-sm">
+        ¿Ya tienes cuenta?
+        <a href="iniciar-sesion.html"
+           class="ml-1 rounded border border-white/30 bg-white/10 px-2 py-0.5 font-semibold text-cyan-300 transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500">
+          Inicia sesión
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Mostrar / ocultar contraseña
+    document.querySelectorAll("[data-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const input = document.getElementById(btn.dataset.toggle);
+        const oculto = input.type === "password";
+        input.type = oculto ? "text" : "password";
+        btn.textContent = oculto ? "Ocultar" : "Mostrar";
+      });
+    });
+
+    // Registro rápido con redes
+    document.getElementById("btn-google").addEventListener("click", () => { window.location.href = "/auth/google"; });
+    document.getElementById("btn-facebook").addEventListener("click", () => { window.location.href = "/auth/facebook"; });
+
+    // Validación y envío
+    const form = document.getElementById("form-registro");
+    const error = document.getElementById("error");
+
+    function mostrarError(msg) {
+      error.textContent = msg;
+      error.classList.remove("hidden");
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      error.classList.add("hidden");
+
+      const datos = Object.fromEntries(new FormData(form));
+
+      if (!datos.nombre.trim()) return mostrarError("Escribe tu nombre completo.");
+      if (!/^\S+@\S+\.\S+$/.test(datos.correo)) return mostrarError("Escribe un correo válido.");
+      if (datos.password.length < 8) return mostrarError("La contraseña debe tener mínimo 8 caracteres.");
+      if (datos.password !== datos.confirmar) return mostrarError("Las contraseñas no coinciden.");
+      if (!form.terminos.checked) return mostrarError("Debes aceptar los términos y condiciones.");
+
+      // Conecta aquí tu backend (Express). No envíes "confirmar".
+      try {
+        const res = await fetch("/api/registro", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            nombre: datos.nombre.trim(),
+            correo: datos.correo,
+            telefono: datos.telefono,
+            password: datos.password,
+            rol: datos.rol
+          })
+        });
+        if (!res.ok) {
+          const r = await res.json().catch(() => ({}));
+          return mostrarError(r.mensaje || "No se pudo crear la cuenta. Inténtalo de nuevo.");
+        }
+        window.location.href = "iniciar-sesion.html";
+      } catch {
+        mostrarError("No hay conexión con el servidor.");
+      }
+    });
+  </script>
+</body>
+</html>
