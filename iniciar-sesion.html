@@ -153,7 +153,7 @@
       if (!/^\S+@\S+\.\S+$/.test(datos.correo)) return mostrarError("Escribe un correo válido.");
       if (!datos.password) return mostrarError("Escribe tu contraseña.");
 
-      // Conecta aquí tu backend (Express).
+      // Backend (Express).
       try {
         const res = await fetch("/api/login", {
           method: "POST",

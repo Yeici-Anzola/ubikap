@@ -198,7 +198,7 @@
       if (datos.password !== datos.confirmar) return mostrarError("Las contraseñas no coinciden.");
       if (!form.terminos.checked) return mostrarError("Debes aceptar los términos y condiciones.");
 
-      // Conecta aquí tu backend (Express). No envíes "confirmar".
+      // Backend (Express). No envíes "confirmar".
       try {
         const res = await fetch("/api/registro", {
           method: "POST",
